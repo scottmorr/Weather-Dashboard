@@ -29,22 +29,45 @@ $(document).ready(function () {
         console.log(response);
         var city = $("<div>");
         //start coding here look at using append or appendChild to make the weather facts appear
+        //add class and have current weather appear
+        $("#temp").text("Temperature: ");
+          var temperatureFarenheit = ((response.main.temp -273.15) *1.8)+32;
+          $(".temperatureFarenheit").append(temperatureFarenheit);
+         // $(".temperatureFarenheitClass")$temperatureFarenheit.append
+
+          //convert temp to farenheit
+          //add if conditional here that adds a symbol for how warm it is
+        $("#humidity").text("Humidity: ");
+          $(".currentHumidity").append(response.main.humidity);
+        $("#windSpeed").text("Wind Speed: ");
+          $(".currentWindSpeed").append(response.wind.speed);
+        var lat = response.coord.lat;
+        var lon = response.coord.lon;
+        var uvUrl = "http://api.openweathermap.org/data/2.5/uvi?appid=4c977f45a07a9d54331ea1e40d5a5185&lat="+lat+"&lon="+lon;
+          $.ajax({
+            type: "GET",
+            url: uvUrl,
+            dataType: "json",
+          }).then(function(response) {
+        console.log(response);
         
-        $("#temp").text("Temperature:");
-        $("#humidity").text("Humidity:");
-        $("#windSpeed").text("Wind Speed:");
-        $("#uvIndex").text("UV Index:");
+        $("#uvIndex").text("UV Index: ");
+        $(".currentUvIndex").append(response.value);
+         });
+        
+        
+        
+        
+        
 
 
-      //   city.appendChild(`
-      //    <h5>${searchValue}</h5>
-      //    <h7>${response.main.temp}<h7>
+      
         
-        
-      // `)
-        
-        
-        
+      
+      // current uv index api
+      //http://samples.openweathermap.org/data/2.5/uvi?lat=37.75&lon=-122.37&appid=b6907d289e10d714a6e88b30761fae22
+       // "http://samples.openweathermap.org/data/2.5/uvi?q=" + searchValue + "&appid=4c977f45a07a9d54331ea1e40d5a5185";
+       // 
         
         city.textContent = searchValue;
       });
@@ -54,20 +77,7 @@ $(document).ready(function () {
     searchWeather(searchValue);
   });
 });
-    // //dont have a query input var query = $("#query-input").val().trim();
-
-    // $.ajax({
-    //   url: queryURL,
-    //   method: "GET"
-    // }).then(function (response) {
-    //   // $("#query-input").text(JSON.stringify(response));
-
-    // });
-
-
-    //});   // Examples of API calls:
-
-
+   
 
     // `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${apiKey}`
 
