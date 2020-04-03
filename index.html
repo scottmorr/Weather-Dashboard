@@ -21,101 +21,40 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Weather Dashboard</h1>
-            <p class="lead">Check the weather in any city you want!.</p>
+            <h1 class="display-4" id="addDate">Weather Dashboard  </h1>
+            <p class="lead">Check the weather in any city you want!</p>
+            <div id="addDate"></div>
         </div>
     </div>
 
 
-    <!--<textarea class="col-md-8 description" id='box-0' placeholder ="List activity here"></textarea>  -->
-
     <div class="container">
+
 
         <aside>
             <form class="form-inline my-2 my-lg-0" id="search-box">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search by City" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" id="search-button" type="submit">Search</button>
+                <input class="form-control" type="text" id="search-value"placeholder="City Name"><br>
             </form>
-            <ul class="list-group">
-                <form class="list-group-item" placeholder="City"></form>
-                <li class="list-group-item">Atlanta</li>
-                <li class="list-group-item">Salt Lake City</li>
-            </ul>
+          
         </aside>
 
-        <div class="card">
-            <div class="card-title">
-                <div class="currentCity" id="currentDay" class="lead">
-                    <h3> Current City Stats</h3>
-                </div>
-                <h5>Temp:</h5>
-                <h5>Humidity:</h5>
-                <h5>Wind Speed:</h5>
-                <h5>UV Index:</h5>
-            </div>
+        <div class="card" id="current-city">
+            <div id="city"></div>
+            <div id="temp"></div>
+            <div id="humidity"></div>
+            <div id="windSpeed"></div>
+            <div id="uvIndex"></div>
         </div>
+    </div>
+        
+        <div class="container2" id="fiveDay">
+            
 
 
-        <div class="second-card">
-            <div class="forecast-card">
-                <h4>5 Day Forecast</h4>
-            </div>
-            <div class="row">
-                <div class="col-sm-2">
-                    <div class="day-card">
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text">
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="day-card">
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text">
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="day-card">
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text">
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="day-card">
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text">
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="day-card">
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text">
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
-
-
-
+        
+            
+        </div>
 
     
 
@@ -135,6 +74,10 @@
 
 
 
+
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"

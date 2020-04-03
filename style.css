@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-}
+
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -8,11 +6,11 @@ body {
 .jumbotron{
     text-align: center;
     color:blue;
-   
-    margin-bottom: 90px;
+    margin-bottom: 50px;
 }
-
-
+.add-date {
+    color: red;
+}
 .container {
     position: absolute;
     background-color:  lightgoldenrodyellow;
@@ -20,57 +18,56 @@ body {
 aside {
     float: left;
     margin: 20px;
+    background-color: linen;
+
 }
-
-
+.form-control {
+    background-color: linen;
+}
+.btn {
+    background-color: linen;
+}
+.list-group-item{
+    background-color: linen;
+}
 .card {
-    background-color: cyan;
+    background-color: linen;
     border: 1px solid black;
     margin-top: 25px;
     padding-top: 15px;
+    height: 185px;
 }
 #search-box{
     background-color: white;
 }
 
-    
 
-
-.second-card {
-    
-    background-color: lightgoldenrodyellow;
-    margin-bottom: 75px;
-    border: 1px solid black;
-    margin-top: 100px;
-    margin-left: 15px;
-    margin-right: 15px;
+#currentDay{
+    margin-right: 10px;
 }
-
-h4 {
-    margin-right: 65px;
-}
-
 #currentDay {
-    float:right;
+    color: blue;
+    margin-top: 30px;
+    margin-right: 35px;
 }
-h4 {
-    text-align: center;
+#temp {
+    padding-bottom: 15px;
 }
-.day-card {
+#humidity{
+    padding-bottom: 15px;
+}
+#windSpeed{
+    padding-bottom: 15px;
+}
+#uvIndex{
+    padding-bottom: 5px;
+}
+.container2{
     border: 1px solid black;
-    margin-right: 15px;
-    margin-left: 15px;
-    padding-bottom: 25px;
-    margin-bottom: 25px;
-
-}
-.day-card {
+    margin-top: 285px;
+    height: 215px;
+    width: 1030px;
     background-color: linen;
-    height: 180px;
-    width: 180px;
-    margin-left: 80px;
-}
-.card-text {
-    text-align: center;
-    margin-top: 130px;
+    margin-left: 95px;
+   
 }
