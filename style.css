@@ -12,10 +12,10 @@ body {
 .add-date {
     color: red;
 }
-.container {
+/*.container {
     position: absolute;
     background-color:  lightgoldenrodyellow;
-}
+}*/
 aside {
     float: left;
     margin: 20px;
@@ -63,12 +63,16 @@ aside {
 #uvIndex{
     padding-bottom: 5px;
 }
-.container2{
+/*.container2{
     border: 1px solid black;
     margin-top: 285px;
     height: 215px;
     width: 1030px;
     background-color: linen;
     margin-left: 95px;
-   
-}
+   }*/
+
+   .row {
+       margin-left: 80px;
+   }
+

@@ -34,11 +34,11 @@
         <aside>
             <form class="form-inline my-2 my-lg-0" id="search-box">
                 <button class="btn btn-outline-success my-2 my-sm-0" id="search-button" type="submit">Search</button>
-                <input class="form-control" type="text" id="search-value"placeholder="City Name"><br>
+                <input class="form-control" type="text" id="search-value" placeholder="City Name"><br>
             </form>
-          
+
         </aside>
-<!--    add classes and append weather to each class-->
+        <!--    add classes and append weather to each class-->
         <div class="card" id="current-city">
             <div id="city" class="currentCity"></div>
             <div id="temp" class="temperatureFarenheit"></div>
@@ -47,21 +47,63 @@
             <div id="uvIndex" class="currentUvIndex"></div>
         </div>
     </div>
-        
-        <div class="container2" id="fiveDay">
-            <div class="card"></div>
-            <div id="dayOne" class="firstday"></div>
-            <div id="dayTwo" class="secondday"></div>
-            <div id="dayThree" class="firstday"></div>
-            <div id="dayFour" class="firstday"></div>
-            <div id="dayFive" class="firstday"></div>
-            
 
-        
-            
+   <div class="container2" id="fiveDay"> 
+       <!--- <div class="card"></div>
+        <div id="dayOne" class="firstday"></div> 
+        <div id="dayTwo" class="secondday"></div>
+        <div id="dayThree" class="firstday"></div>
+        <div id="dayFour" class="firstday"></div>
+        <div id="dayFive" class="firstday"></div> 
+   </div> -->
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="card">
+                <div class="card-body" id="dayOne">
+                    <h5 class="card-title" id="dayOne"></h5>
+                    <p class="card-text">.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="card">
+                <div class="card-body" id="dayTwo">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text">.</p>
+                </div>
+            </div>
         </div>
 
-    
+        <div class="col-sm-2">
+            <div class="card">
+                <div class="card-body" id="dayThree">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="card">
+                <div class="card-body" id="dayFour">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="card">
+                <div class="card-body" id="dayFive">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div footer>
+    <h3> today</h3>
+</div>
 
 
 
@@ -82,7 +124,7 @@
 
 
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
