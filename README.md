@@ -41,8 +41,8 @@ Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather da
 ```By city name
 Description:
 You can call by city name or city name, state and country code. API responds with a list of results that match a searching word.
+°
 API call:
-api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}
 
 api.openweathermap.org/data/2.5/weather?q={city name},{state}&appid={your api key}
 
