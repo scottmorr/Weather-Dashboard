@@ -93,35 +93,68 @@ $(document).ready(function () {
 
           moment.unix(response.daily[0].dt).format()
           console.log(moment.unix(response.daily[0].dt).format("M/D/YY"))
-          console.log(response);
-          $("#dayOne").text(Math.round(response.daily[0].temp.day) + "°F  "+response.daily[0].humidity + "% " +  moment.unix(response.daily[0].dt).format("M/D/YY")); //add date here            ;
+          
+         // $("#dayOne").text(Math.round(response.daily[0].temp.day) + "°F  "+response.daily[0].humidity + "% " +  moment.unix(response.daily[0].dt).format("M/D/YY")); //add date here            ;
          
-          $("#dayTwo").text(Math.round(response.daily[1].temp.day)  + "°F  "+response.daily[1].humidity + "% " +  moment.unix(response.daily[1].dt).format("M/D/YY"));                                                                                      
+         // $("#dayTwo").text(Math.round(response.daily[1].temp.day)  + "°F  "+response.daily[1].humidity + "% " +  moment.unix(response.daily[1].dt).format("M/D/YY"));                                                                                      
           
-          $("#dayThree").text(Math.round(response.daily[2].temp.day) + "°F  "+response.daily[2].humidity + "% " + moment.unix(response.daily[2].dt).format("M/D/YY"));                                                                                         
+         // $("#dayThree").text(Math.round(response.daily[2].temp.day) + "°F  "+response.daily[2].humidity + "% " + moment.unix(response.daily[2].dt).format("M/D/YY"));                                                                                         
           
-          $("#dayFour").text(Math.round(response.daily[3].temp.day) + "°F  "+response.daily[3].humidity + "% " + moment.unix(response.daily[3].dt).format("M/D/YY"));
+        //  $("#dayFour").text(Math.round(response.daily[3].temp.day) + "°F  "+response.daily[3].humidity + "% " + moment.unix(response.daily[3].dt).format("M/D/YY"));
 
-          $("#dayFive").text(Math.round(response.daily[4].temp.day) + "°F  "+response.daily[4].humidity + "% " + moment.unix(response.daily[4].dt).format("M/D/YY"));
+        //  $("#dayFive").text(Math.round(response.daily[4].temp.day) + "°F  "+response.daily[4].humidity + "% " + moment.unix(response.daily[4].dt).format("M/D/YY"));
 
 
-        });
+       $("#dayOneTemp").text(Math.round(response.daily[0].temp.day) + " °F");
+       $("#dayOneHumidity").text(response.daily[0].humidity + " % Humidity");
+       $("#dayOneDate").text( moment.unix(response.daily[0].dt).format("M/D/YY")); //add date here            
+       //);
         
+       $("#dayTwoTemp").text(Math.round(response.daily[1].temp.day) + " °F");
+       $("#dayTwoHumidity").text(response.daily[1].humidity + " % Humidity");
+       $("#dayTwoDate").text( moment.unix(response.daily[1].dt).format("M/D/YY")); //add date here            
+       //);
+        
+       $("#dayThreeTemp").text(Math.round(response.daily[2].temp.day) + " °F");
+       $("#dayThreeHumidity").text(response.daily[2].humidity + " % Humidity");
+       $("#dayThreeDate").text( moment.unix(response.daily[2].dt).format("M/D/YY")); //add date here            
+       //);
+        
+       $("#dayFourTemp").text(Math.round(response.daily[3].temp.day) + " °F");
+       $("#dayFourHumidity").text(response.daily[3].humidity + " % Humidity");
+       $("#dayFourDate").text( moment.unix(response.daily[3].dt).format("M/D/YY")); //add date here            
+       //);
+       $("#dayFiveTemp").text(Math.round(response.daily[4].temp.day) + " °F");
+       $("#dayFiveHumidity").text(response.daily[4].humidity + " % Humidity");
+       $("#dayFiveDate").text( moment.unix(response.daily[4].dt).format("M/D/YY")); //add date here            
+       //);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        });
+      
 
 
-
-
-
-          
-
-
-
-
-
-
-
-
-
+      
+      
+      
+      
+      
+      
+      
+      
+      
         city.textContent = searchValue;
       });
     };
