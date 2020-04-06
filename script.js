@@ -18,16 +18,23 @@ $(document).ready(function () {
 
     var searchValue = $("#search-value").val().trim();
     //console.log(searchValue);
-   
+
 
     $("#city").text(searchValue);
-   // $("#city").css({"color": "blue" });
 
-   
-   
-   
-   
-   
+
+    $(".history").on("click", "li", function () {
+      searchWeather($(this).val());
+      console.log(this);
+    });
+
+    function makeRow(text) {
+      var li = $("<li>").addClass("list-group-item list-group-item-action").text(text);
+      $(".history").append(li);
+    }
+
+
+
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=4c977f45a07a9d54331ea1e40d5a5185";
 
     function searchWeather() {
@@ -36,7 +43,7 @@ $(document).ready(function () {
         url: queryURL,
         dataType: "json",
       }).then(function (response) {
-      //  console.log(response);
+        //  console.log(response);
         var city = $("<div>");
         //start coding here look at using append or appendChild to make the weather facts appear
         //add class and have current weather appear
@@ -44,6 +51,7 @@ $(document).ready(function () {
         // var cityName = (response.value);
         // $("#city").text(cityName);
         // $("#city").css({"color": "blue" })
+
 
 
         $("#temp").text("Temperature: ");
@@ -88,7 +96,7 @@ $(document).ready(function () {
         });
 
         //5 day forecast  
-         var fiveDayUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=4c977f45a07a9d54331ea1e40d5a5185&units=imperial"
+        var fiveDayUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=4c977f45a07a9d54331ea1e40d5a5185&units=imperial"
 
         $.ajax({
           type: "GET",
@@ -99,52 +107,53 @@ $(document).ready(function () {
 
           moment.unix(response.daily[0].dt).format()
           console.log(moment.unix(response.daily[0].dt).format("M/D/YY"))
-          
-         // $("#dayOne").text(Math.round(response.daily[0].temp.day) + "°F  "+response.daily[0].humidity + "% " +  moment.unix(response.daily[0].dt).format("M/D/YY")); //add date here            ;
-         
-         // $("#dayTwo").text(Math.round(response.daily[1].temp.day)  + "°F  "+response.daily[1].humidity + "% " +  moment.unix(response.daily[1].dt).format("M/D/YY"));                                                                                      
-          
-         // $("#dayThree").text(Math.round(response.daily[2].temp.day) + "°F  "+response.daily[2].humidity + "% " + moment.unix(response.daily[2].dt).format("M/D/YY"));                                                                                         
-          
-        //  $("#dayFour").text(Math.round(response.daily[3].temp.day) + "°F  "+response.daily[3].humidity + "% " + moment.unix(response.daily[3].dt).format("M/D/YY"));
 
-        //  $("#dayFive").text(Math.round(response.daily[4].temp.day) + "°F  "+response.daily[4].humidity + "% " + moment.unix(response.daily[4].dt).format("M/D/YY"));
+          // $("#dayOne").text(Math.round(response.daily[0].temp.day) + "°F  "+response.daily[0].humidity + "% " +  moment.unix(response.daily[0].dt).format("M/D/YY")); //add date here            ;
+
+          // $("#dayTwo").text(Math.round(response.daily[1].temp.day)  + "°F  "+response.daily[1].humidity + "% " +  moment.unix(response.daily[1].dt).format("M/D/YY"));                                                                                      
+
+          // $("#dayThree").text(Math.round(response.daily[2].temp.day) + "°F  "+response.daily[2].humidity + "% " + moment.unix(response.daily[2].dt).format("M/D/YY"));                                                                                         
+
+          //  $("#dayFour").text(Math.round(response.daily[3].temp.day) + "°F  "+response.daily[3].humidity + "% " + moment.unix(response.daily[3].dt).format("M/D/YY"));
+
+          //  $("#dayFive").text(Math.round(response.daily[4].temp.day) + "°F  "+response.daily[4].humidity + "% " + moment.unix(response.daily[4].dt).format("M/D/YY"));
 
 
-       $("#dayOneTemp").text(Math.round(response.daily[0].temp.day) + " °F");
-       $("#dayOneHumidity").text(response.daily[0].humidity + " % Humidity");
-       $("#dayOneDate").text( moment.unix(response.daily[0].dt).format("M/D/YY")); //add date here            
-       
-       $("#dayTwoTemp").text(Math.round(response.daily[1].temp.day) + " °F");
-       $("#dayTwoHumidity").text(response.daily[1].humidity + " % Humidity");
-       $("#dayTwoDate").text( moment.unix(response.daily[1].dt).format("M/D/YY")); //add date here            
-       
-        
-       $("#dayThreeTemp").text(Math.round(response.daily[2].temp.day) + " °F");
-       $("#dayThreeHumidity").text(response.daily[2].humidity + " % Humidity");
-       $("#dayThreeDate").text( moment.unix(response.daily[2].dt).format("M/D/YY")); //add date here            
-       
-        
-       $("#dayFourTemp").text(Math.round(response.daily[3].temp.day) + " °F");
-       $("#dayFourHumidity").text(response.daily[3].humidity + " % Humidity");
-       $("#dayFourDate").text( moment.unix(response.daily[3].dt).format("M/D/YY")); //add date here            
-       
-       $("#dayFiveTemp").text(Math.round(response.daily[4].temp.day) + " °F");
-       $("#dayFiveHumidity").text(response.daily[4].humidity + " % Humidity");
-       $("#dayFiveDate").text( moment.unix(response.daily[4].dt).format("M/D/YY")); //add date here            
-       
-        
-      
-        
+          $("#dayOneTemp").text(Math.round(response.daily[0].temp.day) + " °F");
+          $("#dayOneHumidity").text(response.daily[0].humidity + " % Humidity");
+          $("#dayOneDate").text(moment.unix(response.daily[0].dt).format("M/D/YY")); //add date here            
+
+          $("#dayTwoTemp").text(Math.round(response.daily[1].temp.day) + " °F");
+          $("#dayTwoHumidity").text(response.daily[1].humidity + " % Humidity");
+          $("#dayTwoDate").text(moment.unix(response.daily[1].dt).format("M/D/YY")); //add date here            
+
+
+          $("#dayThreeTemp").text(Math.round(response.daily[2].temp.day) + " °F");
+          $("#dayThreeHumidity").text(response.daily[2].humidity + " % Humidity");
+          $("#dayThreeDate").text(moment.unix(response.daily[2].dt).format("M/D/YY")); //add date here            
+
+
+          $("#dayFourTemp").text(Math.round(response.daily[3].temp.day) + " °F");
+          $("#dayFourHumidity").text(response.daily[3].humidity + " % Humidity");
+          $("#dayFourDate").text(moment.unix(response.daily[3].dt).format("M/D/YY")); //add date here            
+
+          $("#dayFiveTemp").text(Math.round(response.daily[4].temp.day) + " °F");
+          $("#dayFiveHumidity").text(response.daily[4].humidity + " % Humidity");
+          $("#dayFiveDate").text(moment.unix(response.daily[4].dt).format("M/D/YY")); //add date here            
+
+
+
+
         });
-    
-      
+
+
         //city.textContent = searchValue;
       });
     };
 
 
     searchWeather(searchValue);
+    makeRow(searchValue);
   });
 });
 
