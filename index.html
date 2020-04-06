@@ -40,16 +40,20 @@
         </aside>
         <!--    add classes and append weather to each class-->
         <div class="card" id="current-city">
-            <div id="city" class="currentCity"></div>
-            <div id="temp" class="temperatureFarenheit"></div>
-            <div id="humidity" class="currentHumidity"></div>
-            <div id="windSpeed" class="currentWindSpeed"></div>
-            <div id="uvIndex" class="currentUvIndex"></div>
+            <div class="city-box">
+                <h2 id="city" class="currentCity"></h2>
+            </div>
+            <div id="cityFacts">
+                <h7 id="temp" class="temperatureFarenheit"></h7>
+                <h7 id="humidity" class="currentHumidity"></h7>
+                <h7 id="windSpeed" class="currentWindSpeed"></h7>
+                <div id="uvIndex" class="currentUvIndex"></div>
+            </div>
         </div>
     </div>
 
-   <div class="container2" id="fiveDay"> 
-       <!--- <div class="card"></div>
+    <div class="container2" id="fiveDay">
+        <!--- <div class="card"></div>
         <div id="dayOne" class="firstday"></div> 
         <div id="dayTwo" class="secondday"></div>
         <div id="dayThree" class="firstday"></div>
@@ -57,86 +61,69 @@
         <div id="dayFive" class="firstday"></div> 
    </div> -->
 
-    <div class="row">
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="card-body" id="dayOne">
-                    <p class="date" id="dayOneDate"></p>
-                    <p class="temp" id="dayOneTemp"></p>
-                    <p class="humidity" id="dayOneHumidity"></p>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="card">
+                    <div class="card-body" id="dayOne">
+                        <p class="date" id="dayOneDate"></p>
+                        <p class="temp" id="dayOneTemp"></p>
+                        <p class="humidity" id="dayOneHumidity"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="card">
+                    <div class="card-body" id="dayTwo">
+                        <p class="date" id="dayTwoDate"></p>
+                        <p class="temp" id="dayTwoTemp"></p>
+                        <p class="humidity" id="dayTwoHumidity"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="card">
+                    <div class="card-body" id="dayThree">
+                        <p class="date" id="dayThreeDate"></p>
+                        <p class="temp" id="dayThreeTemp"></p>
+                        <p class="humidity" id="dayThreeHumidity"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="card">
+                    <div class="card-body" id="dayFour">
+                        <p class="date" id="dayFourDate"></p>
+                        <p class="temp" id="dayFourTemp"></p>
+                        <p class="humidity" id="dayFourHumidity"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="card">
+                    <div class="card-body" id="dayFive">
+                        <p class="date" id="dayFiveDate"></p>
+                        <p class="temp" id="dayFiveTemp"></p>
+                        <p class="humidity" id="dayFiveHumidity"></p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="card-body" id="dayTwo">
-                    <p class="date" id="dayTwoDate"></p>
-                    <p class="temp" id="dayTwoTemp"></p>
-                    <p class="humidity" id="dayTwoHumidity"></p>
-                </div>
-            </div>
+
+        <div footer>
+            <h3> 5 Day Forecast</h3>
         </div>
 
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="card-body" id="dayThree">
-                    <p class="date" id="dayThreeDate"></p>
-                    <p class="temp" id="dayThreeTemp"></p>
-                    <p class="humidity" id="dayThreeHumidity"></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="card-body" id="dayFour">
-                   <p class="date" id="dayFourDate"></p>
-                   <p class="temp" id="dayFourTemp"></p>
-                   <p class="humidity" id="dayFourHumidity"></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="card-body" id="dayFive">
-                   <p class="date" id="dayFiveDate"></p>
-                   <p class="temp" id="dayFiveTemp"></p>
-                   <p class="humidity" id="dayFiveHumidity"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<div footer>
-    <h3> 5 Day forecast</h3>
-</div>
 
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 
 
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="script.js"></script>
 
 
 

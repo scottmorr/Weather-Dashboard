@@ -17,7 +17,17 @@ $(document).ready(function () {
 
 
     var searchValue = $("#search-value").val().trim();
-    console.log(searchValue);
+    //console.log(searchValue);
+   
+
+    $("#city").text(searchValue);
+   // $("#city").css({"color": "blue" });
+
+   
+   
+   
+   
+   
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=4c977f45a07a9d54331ea1e40d5a5185";
 
     function searchWeather() {
@@ -26,14 +36,14 @@ $(document).ready(function () {
         url: queryURL,
         dataType: "json",
       }).then(function (response) {
-        console.log(response);
+      //  console.log(response);
         var city = $("<div>");
         //start coding here look at using append or appendChild to make the weather facts appear
         //add class and have current weather appear
 
-        var cityName = (response.value);
-        $("#city").text(cityName);
-        $("#city").css({ "text-align": "center", "color": "blue" })
+        // var cityName = (response.value);
+        // $("#city").text(cityName);
+        // $("#city").css({"color": "blue" })
 
 
         $("#temp").text("Temperature: ");
@@ -68,7 +78,7 @@ $(document).ready(function () {
           if (indexSymbol >= 8.0) {
             $("#uvIndex").css({ "border": "1px solid black", "background-color": "lightred" });
           } else if (indexSymbol >= 5.9) {
-            $("#uvIndex").css({ "border": "1px solid black", "background-color": "lightyellow" });
+            $("#uvIndex").css({ "border": "1px solid black", "background-color": "yellow" });
           } else {
             $("#uvIndex").css({ "border": "1px solid black", "background-color": "lightgreen" });
           }
@@ -77,12 +87,8 @@ $(document).ready(function () {
 
         });
 
-          
-    var fiveDayUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=4c977f45a07a9d54331ea1e40d5a5185&units=imperial"
-
-
-        //5 day forecast
-
+        //5 day forecast  
+         var fiveDayUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=4c977f45a07a9d54331ea1e40d5a5185&units=imperial"
 
         $.ajax({
           type: "GET",
@@ -108,54 +114,32 @@ $(document).ready(function () {
        $("#dayOneTemp").text(Math.round(response.daily[0].temp.day) + " °F");
        $("#dayOneHumidity").text(response.daily[0].humidity + " % Humidity");
        $("#dayOneDate").text( moment.unix(response.daily[0].dt).format("M/D/YY")); //add date here            
-       //);
-        
+       
        $("#dayTwoTemp").text(Math.round(response.daily[1].temp.day) + " °F");
        $("#dayTwoHumidity").text(response.daily[1].humidity + " % Humidity");
        $("#dayTwoDate").text( moment.unix(response.daily[1].dt).format("M/D/YY")); //add date here            
-       //);
+       
         
        $("#dayThreeTemp").text(Math.round(response.daily[2].temp.day) + " °F");
        $("#dayThreeHumidity").text(response.daily[2].humidity + " % Humidity");
        $("#dayThreeDate").text( moment.unix(response.daily[2].dt).format("M/D/YY")); //add date here            
-       //);
+       
         
        $("#dayFourTemp").text(Math.round(response.daily[3].temp.day) + " °F");
        $("#dayFourHumidity").text(response.daily[3].humidity + " % Humidity");
        $("#dayFourDate").text( moment.unix(response.daily[3].dt).format("M/D/YY")); //add date here            
-       //);
+       
        $("#dayFiveTemp").text(Math.round(response.daily[4].temp.day) + " °F");
        $("#dayFiveHumidity").text(response.daily[4].humidity + " % Humidity");
        $("#dayFiveDate").text( moment.unix(response.daily[4].dt).format("M/D/YY")); //add date here            
-       //);
+       
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      
         
         });
+    
       
-
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-        city.textContent = searchValue;
+        //city.textContent = searchValue;
       });
     };
 
@@ -165,7 +149,15 @@ $(document).ready(function () {
 });
 
 
-
+// //local storage
+// $(".saveBtn").on('click', function () {
+//   var activity = $(this).siblings(".description").val();
+//   var time = $(this).parent().attr("id");
+//   window.localStorage.setItem(time, JSON.stringify(activity))
+//   console.log(activity);
+//   var item = localStorage.getItem(time, 'activity');
+//   var parsed = JSON.parse(item);
+// });
 
 
 

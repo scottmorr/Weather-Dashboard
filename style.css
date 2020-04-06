@@ -9,9 +9,7 @@ body {
     color:blue;
     margin-bottom: 50px;
 }
-.add-date {
-    color: red;
-}
+
 /*.container {
     position: absolute;
     background-color:  lightgoldenrodyellow;
@@ -48,12 +46,28 @@ aside {
     margin-right: 10px;
 }
 #currentDay {
-    color: blue;
+    color: black;
     margin-top: 30px;
     margin-right: 35px;
 }
 #temp {
     padding-bottom: 15px;
+}
+#current-city {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+#cityFacts {
+    display: flex;
+    flex-direction: column;
+    margin-right: 295px;
+}
+#city {
+    font-weight: bolder;
+    color: black;
+    padding: 20px;
+    margin-top: 30px;
 }
 #humidity{
     padding-bottom: 15px;
@@ -78,7 +92,7 @@ aside {
    }
    h3 {
        text-align: center;
-       color: blue;
+       color: black;
    }
    .date {
        text-align: center;
