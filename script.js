@@ -8,6 +8,7 @@ $(document).ready(function () {
 
 
 
+  $("#date").append(currentDay);
 
 
 
@@ -17,10 +18,19 @@ $(document).ready(function () {
 
 
     var searchValue = $("#search-value").val().trim();
-    //console.log(searchValue);
+    
 
 
     $("#city").text(searchValue);
+   
+
+    //$("#date").hide(click);
+    //$("#date").show();
+
+
+
+
+
 
 
     $(".history").on("click", "li", function () {
@@ -45,12 +55,11 @@ $(document).ready(function () {
       }).then(function (response) {
         //  console.log(response);
         var city = $("<div>");
-        //start coding here look at using append or appendChild to make the weather facts appear
-        //add class and have current weather appear
 
-        // var cityName = (response.value);
-        // $("#city").text(cityName);
-        // $("#city").css({"color": "blue" })
+
+         var cityName = (response.value);
+         $("#city").text(cityName);
+         $("#city").css({"color": "black" })
 
 
 
@@ -60,14 +69,12 @@ $(document).ready(function () {
         $(".temperatureFarenheit").append(Math.round(temperatureFarenheit) + " °F");
 
 
-        //convert temp to farenheit
-        //add if conditional here that adds a symbol for how warm it is
         $("#humidity").text("Humidity: ");
         $(".currentHumidity").append(response.main.humidity + " %");
         $("#windSpeed").text("Wind Speed: ");
         $(".currentWindSpeed").append(response.wind.speed + " MPH");
 
-
+        //UV index here
         var lat = response.coord.lat;
         var lon = response.coord.lon;
         var uvUrl = "http://api.openweathermap.org/data/2.5/uvi?appid=4c977f45a07a9d54331ea1e40d5a5185&lat=" + lat + "&lon=" + lon;
@@ -80,7 +87,7 @@ $(document).ready(function () {
 
           $("#uvIndex").text("UV Index: ");
           $(".currentUvIndex").append(response.value);
-
+            //conditional that color codes uv index
           var indexSymbol = (response.value);
           console.log(indexSymbol);
           if (indexSymbol >= 8.0) {
@@ -108,38 +115,30 @@ $(document).ready(function () {
           moment.unix(response.daily[0].dt).format()
           console.log(moment.unix(response.daily[0].dt).format("M/D/YY"))
 
-          // $("#dayOne").text(Math.round(response.daily[0].temp.day) + "°F  "+response.daily[0].humidity + "% " +  moment.unix(response.daily[0].dt).format("M/D/YY")); //add date here            ;
+          
 
-          // $("#dayTwo").text(Math.round(response.daily[1].temp.day)  + "°F  "+response.daily[1].humidity + "% " +  moment.unix(response.daily[1].dt).format("M/D/YY"));                                                                                      
-
-          // $("#dayThree").text(Math.round(response.daily[2].temp.day) + "°F  "+response.daily[2].humidity + "% " + moment.unix(response.daily[2].dt).format("M/D/YY"));                                                                                         
-
-          //  $("#dayFour").text(Math.round(response.daily[3].temp.day) + "°F  "+response.daily[3].humidity + "% " + moment.unix(response.daily[3].dt).format("M/D/YY"));
-
-          //  $("#dayFive").text(Math.round(response.daily[4].temp.day) + "°F  "+response.daily[4].humidity + "% " + moment.unix(response.daily[4].dt).format("M/D/YY"));
-
-
+          //allows temp data to be ordered on each card
           $("#dayOneTemp").text(Math.round(response.daily[0].temp.day) + " °F");
           $("#dayOneHumidity").text(response.daily[0].humidity + " % Humidity");
-          $("#dayOneDate").text(moment.unix(response.daily[0].dt).format("M/D/YY")); //add date here            
+          $("#dayOneDate").text(moment.unix(response.daily[0].dt).format("M/D/YY"));           
 
           $("#dayTwoTemp").text(Math.round(response.daily[1].temp.day) + " °F");
           $("#dayTwoHumidity").text(response.daily[1].humidity + " % Humidity");
-          $("#dayTwoDate").text(moment.unix(response.daily[1].dt).format("M/D/YY")); //add date here            
+          $("#dayTwoDate").text(moment.unix(response.daily[1].dt).format("M/D/YY"));             
 
 
           $("#dayThreeTemp").text(Math.round(response.daily[2].temp.day) + " °F");
           $("#dayThreeHumidity").text(response.daily[2].humidity + " % Humidity");
-          $("#dayThreeDate").text(moment.unix(response.daily[2].dt).format("M/D/YY")); //add date here            
+          $("#dayThreeDate").text(moment.unix(response.daily[2].dt).format("M/D/YY"));             
 
 
           $("#dayFourTemp").text(Math.round(response.daily[3].temp.day) + " °F");
           $("#dayFourHumidity").text(response.daily[3].humidity + " % Humidity");
-          $("#dayFourDate").text(moment.unix(response.daily[3].dt).format("M/D/YY")); //add date here            
+          $("#dayFourDate").text(moment.unix(response.daily[3].dt).format("M/D/YY"));             
 
           $("#dayFiveTemp").text(Math.round(response.daily[4].temp.day) + " °F");
           $("#dayFiveHumidity").text(response.daily[4].humidity + " % Humidity");
-          $("#dayFiveDate").text(moment.unix(response.daily[4].dt).format("M/D/YY")); //add date here            
+          $("#dayFiveDate").text(moment.unix(response.daily[4].dt).format("M/D/YY"));             
 
 
 
@@ -147,7 +146,6 @@ $(document).ready(function () {
         });
 
 
-        //city.textContent = searchValue;
       });
     };
 
@@ -158,15 +156,6 @@ $(document).ready(function () {
 });
 
 
-// //local storage
-// $(".saveBtn").on('click', function () {
-//   var activity = $(this).siblings(".description").val();
-//   var time = $(this).parent().attr("id");
-//   window.localStorage.setItem(time, JSON.stringify(activity))
-//   console.log(activity);
-//   var item = localStorage.getItem(time, 'activity');
-//   var parsed = JSON.parse(item);
-// });
 
 
 
