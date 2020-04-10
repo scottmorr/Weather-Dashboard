@@ -24,7 +24,6 @@ $(document).ready(function () {
     $("#city").text(searchValue);
    
 
-    //$("#date").classList.remove("s");
     $("#date").show();
 
 
@@ -36,6 +35,7 @@ $(document).ready(function () {
     $(".history").on("click", "li", function () {
       searchWeather($(this).val());
       console.log(this);
+      $("#search-value").val(" ");
     });
 
     function makeRow(text) {
@@ -81,7 +81,7 @@ $(document).ready(function () {
         //UV index here
         var lat = response.coord.lat;
         var lon = response.coord.lon;
-        var uvUrl = "http://api.openweathermap.org/data/2.5/uvi?appid=4c977f45a07a9d54331ea1e40d5a5185&lat=" + lat + "&lon=" + lon;
+        var uvUrl = "https://api.openweathermap.org/data/2.5/uvi?appid=4c977f45a07a9d54331ea1e40d5a5185&lat=" + lat + "&lon=" + lon;
         $.ajax({
           type: "GET",
           url: uvUrl,
