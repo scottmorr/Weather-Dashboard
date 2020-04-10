@@ -68,7 +68,9 @@ aside {
     
 }
 
-
+.hide {
+    display: none;
+}
 
 #city {
     font-weight: bolder;

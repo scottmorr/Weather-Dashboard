@@ -24,8 +24,8 @@ $(document).ready(function () {
     $("#city").text(searchValue);
    
 
-    //$("#date").hide(click);
-    //$("#date").show();
+    //$("#date").classList.remove("s");
+    $("#date").show();
 
 
 
@@ -56,8 +56,12 @@ $(document).ready(function () {
         //  console.log(response);
         var city = $("<div>");
 
-
-         var cityName = (response.value);
+      //  $("#date").classList.remove("hide");
+         
+        
+        
+        
+        var cityName = (response.value);
          $("#city").text(cityName);
          $("#city").css({"color": "black" })
 
