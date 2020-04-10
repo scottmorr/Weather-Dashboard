@@ -45,7 +45,7 @@ $(document).ready(function () {
 
 
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=4c977f45a07a9d54331ea1e40d5a5185";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=4c977f45a07a9d54331ea1e40d5a5185";
 
     function searchWeather() {
       $.ajax({
